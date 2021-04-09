@@ -43,7 +43,7 @@ const tabsAppender = (selector) => {
     .then(res => {
       const tab = Tabs(res.topics);
       addTabs.appendChild(tab);
-      // console.log(tab);
+      console.log(tab);
     })
     .catch(error =>{
       console.log(error);
