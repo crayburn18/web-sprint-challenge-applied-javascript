@@ -22,7 +22,7 @@ const Tabs = (topics) => {
 topics.forEach(item => {
     const newDiv = document.createElement('div');
     newDiv.classList.add('tab');
-    newDiv.textContent = `${item}`;
+    newDiv.textContent = item;
     tabTopics.appendChild(newDiv);
   });
 
@@ -41,9 +41,9 @@ const tabsAppender = (selector) => {
   axios
     .get(`https://lambda-times-api.herokuapp.com/topics`)
     .then(res => {
-      const tab = Tabs(res.topics);
+      // console.log(res);
+      const tab = Tabs(res.data.topics);
       addTabs.appendChild(tab);
-      console.log(tab);
     })
     .catch(error =>{
       console.log(error);
